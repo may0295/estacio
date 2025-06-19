@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="custom.css">
+        <link rel="stylesheet" href="css/custom.css">
     </head>
     <body class="px-3">
 
@@ -106,17 +106,31 @@
 
 
 
-    <table class="mt-3 table table-striped table-hover">
+        
+
+    <table id = "tabela" class="mt-3 table table-striped table-hover">
         <thead class="table-dark">
+            
             <tr>
                 <th>#ID</th>
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Imagem</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Ações</th>
+                <th>Nome
+                    <button onclick="ordenarPorNome()" class="btn btn-sm btn-light py-0 px-1 ms-1">⇅</button>
+                </th>
+                <th>Categoria
+                    <button onclick="ordenarPorCategoria()" class="btn btn-sm btn-light py-0 px-1 ms-1">⇅</button>
+                </th>
+                <th>Imagem
+                </th>
+                <th>Descrição
+                </th>
+                <th>Preço
+                    <button onclick="ordenarPorPreco()" class="btn btn-sm btn-light py-0 px-1 ms-1">⇅</button>
+                </th>
+                <th>Quantidade
+                    <button onclick="ordenarPorQuantidade()" class="btn btn-sm btn-light py-0 px-1 ms-1">⇅</button>
+                </th>
+                <th>Ações
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -163,12 +177,12 @@
             </tr>
             <tr>
                 <td>4</td>
-                <td>Pitú</td>
-                <td>Destilados</td>
-                <td><img width='70px' src='https://redemix.vteximg.com.br/arquivos/ids/209157-500-500/7896383730152.jpg'></td>
-                <td>Garrafa, 965ml</td>
-                <td>R$ 11.30</td>
-                <td>20</td>
+                <td>Sprite</td>
+                <td>Bebidas não alcoolicas</td>
+                <td><img width='70px' src='data:image/webp;base64,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'></td>
+                <td>1L</td>
+                <td>R$ 6.50</td>
+                <td>25</td>
                 <td>
                     <a href='#' class='btn btn-sm btn-warning'>Editar</a>
                     <a href='#' class='btn btn-sm btn-danger'>Excluir</a>
@@ -304,20 +318,45 @@
                     <a href='#' class='btn btn-sm btn-danger'>Excluir</a>
                 </td>
             </tr>
+                </td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Coca Cola Normal</td>
+                <td>Bebidas não alcoolicas</td>
+                <td><img width='70px' src='data:image/webp;base64,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'></td>
+                <td>Tradicional, 1L</td>
+                <td>R$ 7.20</td>
+                <td>55</td>
+                <td>
+                    <a href='#' class='btn btn-sm btn-warning'>Editar</a>
+                    <a href='#' class='btn btn-sm btn-danger'>Excluir</a>
+                </td>
+            </tr>
+            </td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Coca Cola Zero</td>
+                <td>Bebidas não alcoolicas</td>
+                <td><img width='70px' src='data:image/webp;base64,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'></td>
+                <td>Tradicional, 1L</td>
+                <td>R$ 7.20</td>
+                <td>40</td>
+                <td>
+                    <a href='#' class='btn btn-sm btn-warning'>Editar</a>
+                    <a href='#' class='btn btn-sm btn-danger'>Excluir</a>
+                </td>
+            </tr>
             
         </tbody>
     </table>
 </section>
 
+<script src="orderna.js"></script>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-  const savedMode = localStorage.getItem('darkMode');
-  if (savedMode === 'enabled') {
-    document.body.classList.add('dark-mode');
-  }
-</script>
-
     </body>
 </html>
