@@ -1,0 +1,26 @@
+body {
+    background-color: #DEDEDE;
+}
+
+i {
+    vertical-align: bottom;
+}
+.dark-mode {
+    background-color: #121212;
+    color: #FFFFFF; 
+}
+
+.dark-mode .card { /* adaptacao do tema */
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode a.btn { /* adaptacao do tema */
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.dark-mode a.btn:hover { /* adaptacao do tema */
+    background-color: #ffffff;
+    color: #121212;
+}
