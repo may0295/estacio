@@ -58,12 +58,14 @@
 <script> 
     const divFrase = document.getElementById('frase')
     let data
-    async function fetchFrase(){ 
-        const Frase = await fetch('https://api.chucknorris.io/jokes/random')
-        .then(res=> res.json())
-        .then(json => data = json)
-        renderFrase()
-    } 
+   async function fetchFrase(){ 
+    const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://api.chucknorris.io/jokes/random'));
+    const json = await res.json();
+    const realData = JSON.parse(json.contents);
+    data = realData;
+    renderFrase();
+} 
+
         function renderFrase() {
             divFrase.innerHTML = `
   <img src="${data.icon_url}" />
