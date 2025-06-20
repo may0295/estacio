@@ -14,14 +14,13 @@ function ordenarPorNome() {
       const nomeA = a.cells[1].textContent.toLowerCase();
       const nomeB = b.cells[1].textContent.toLowerCase();
       return nomeA.localeCompare(nomeB);
-      ordenado = 1;
     });
     ordenado = 1;
      } else if (ordenado === 1) {
         linhas.sort((a, b) => {
       const nomeA = a.cells[1].textContent.toLowerCase();
       const nomeB = b.cells[1].textContent.toLowerCase();
-      return nomeB.localeCompare(nomeA);
+      return nomeB.localeCompare(nomeA);    
       });
       ordenado = 2;
      
